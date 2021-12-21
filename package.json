@@ -1,0 +1,25 @@
+{
+  "name": "vite-test",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "coverage": "vitest --coverage"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^12.1.2",
+    "@vitejs/plugin-react": "^1.0.7",
+    "global-jsdom": "^8.4.0",
+    "happy-dom": "^2.25.0",
+    "jsdom": "^19.0.0",
+    "react-test-renderer": "^17.0.2",
+    "vite": "^2.7.2",
+    "vitest": "^0.0.100"
+  }
+}
