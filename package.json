@@ -1,25 +1,52 @@
 {
   "name": "vite-test",
-  "version": "0.0.0",
+  "version": "0.0.0-development",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
-    "coverage": "vitest --coverage"
+    "coverage": "vitest --coverage",
+    "semantic-release": "semantic-release"
   },
   "dependencies": {
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
+    "@semantic-release/changelog": "^6.0.1",
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^8.0.3",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "@testing-library/react": "^12.1.2",
     "@vitejs/plugin-react": "^1.0.7",
+    "commitizen": "^4.2.4",
+    "cz-conventional-changelog": "3.3.0",
     "global-jsdom": "^8.4.0",
     "happy-dom": "^2.25.0",
+    "husky": "^7.0.4",
     "jsdom": "^19.0.0",
     "react-test-renderer": "^17.0.2",
+    "semantic-release": "^18.0.1",
     "vite": "^2.7.2",
     "vitest": "^0.0.100"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yanirmanor/vite-test-vitest.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yanirmanor/vite-test-vitest/issues"
   }
 }
