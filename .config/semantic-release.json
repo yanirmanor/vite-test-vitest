@@ -21,5 +21,5 @@
     ],
     "@semantic-release/github"
   ],
-  "repositoryUrl": "https://github.com/yanirmanor/vite-test-vitest.gitp"
+  "repositoryUrl": "https://github.com/yanirmanor/vite-test-vitest.git"
 }
