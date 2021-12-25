@@ -6,6 +6,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "vitest",
+    "test:CI": "vitest --watch=false",
     "coverage": "vitest --coverage",
     "semantic-release": "semantic-release",
     "commit": "cz"
@@ -22,6 +23,7 @@
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@testing-library/react": "^12.1.2",
     "@vitejs/plugin-react": "^1.0.7",
+    "c8": "^7.10.0",
     "commitizen": "^4.2.4",
     "cz-conventional-changelog": "3.3.0",
     "global-jsdom": "^8.4.0",
@@ -43,5 +45,7 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "release": { "branches": ["main"] }
+  "release": {
+    "branches": ["main"]
+  }
 }

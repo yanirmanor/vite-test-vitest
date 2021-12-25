@@ -8,6 +8,7 @@ specifiers:
   '@semantic-release/release-notes-generator': ^10.0.3
   '@testing-library/react': ^12.1.2
   '@vitejs/plugin-react': ^1.0.7
+  c8: ^7.10.0
   commitizen: ^4.2.4
   cz-conventional-changelog: 3.3.0
   global-jsdom: ^8.4.0
@@ -33,6 +34,7 @@ devDependencies:
   '@semantic-release/release-notes-generator': 10.0.3_semantic-release@18.0.1
   '@testing-library/react': 12.1.2_react-dom@17.0.2+react@17.0.2
   '@vitejs/plugin-react': 1.1.3
+  c8: 7.10.0
   commitizen: 4.2.4
   cz-conventional-changelog: 3.3.0
   global-jsdom: 8.4.0_jsdom@19.0.0
@@ -42,7 +44,7 @@ devDependencies:
   react-test-renderer: 17.0.2_react@17.0.2
   semantic-release: 18.0.1
   vite: 2.7.4
-  vitest: 0.0.100_52dae33e17079a58a59d4319adda37c0
+  vitest: 0.0.100_c23fa83c5cba54867369e85d121cc256
 
 packages:
 
@@ -314,6 +316,10 @@ packages:
       to-fast-properties: 2.0.0
     dev: true
 
+  /@bcoe/v8-coverage/0.2.3:
+    resolution: {integrity: sha1-daLotRy3WKdVPWgEpZMteqznXDk=}
+    dev: true
+
   /@commitlint/execute-rule/15.0.0:
     resolution: {integrity: sha1-a/95Yt846J/5/bwAq9ebiEnH6fk=}
     engines: {node: '>=v12'}
@@ -371,6 +377,11 @@ packages:
       - typescript
     dev: true
     optional: true
+
+  /@istanbuljs/schema/0.1.3:
+    resolution: {integrity: sha1-5F44TkuOwWvOL9kDr3hFD2v37Jg=}
+    engines: {node: '>=8'}
+    dev: true
 
   /@jest/types/27.4.2:
     resolution: {integrity: sha1-llNuvTTaY5LCt8dzfWk4hbXdRKU=}
@@ -966,6 +977,25 @@ packages:
     resolution: {integrity: sha1-qDRUIN6CBo/cTWVZ0EVkA6j7GQU=}
     dependencies:
       semver: 7.3.5
+    dev: true
+
+  /c8/7.10.0:
+    resolution: {integrity: sha1-xTnrsV0kawOwyIcWWYLEkpOVinM=}
+    engines: {node: '>=10.12.0'}
+    hasBin: true
+    dependencies:
+      '@bcoe/v8-coverage': 0.2.3
+      '@istanbuljs/schema': 0.1.3
+      find-up: 5.0.0
+      foreground-child: 2.0.0
+      istanbul-lib-coverage: 3.2.0
+      istanbul-lib-report: 3.0.0
+      istanbul-reports: 3.1.2
+      rimraf: 3.0.2
+      test-exclude: 6.0.0
+      v8-to-istanbul: 8.1.0
+      yargs: 16.2.0
+      yargs-parser: 20.2.9
     dev: true
 
   /cachedir/2.2.0:
@@ -1729,6 +1759,14 @@ packages:
       path-exists: 4.0.0
     dev: true
 
+  /find-up/5.0.0:
+    resolution: {integrity: sha1-TJKBnstwg1YeT0okCoa+UZj1Nvw=}
+    engines: {node: '>=10'}
+    dependencies:
+      locate-path: 6.0.0
+      path-exists: 4.0.0
+    dev: true
+
   /find-versions/4.0.0:
     resolution: {integrity: sha1-PFflc7+XdpuMuN8Wk0tieRXaSWU=}
     engines: {node: '>=10'}
@@ -1744,6 +1782,14 @@ packages:
       is-glob: 4.0.3
       micromatch: 4.0.4
       resolve-dir: 1.0.1
+    dev: true
+
+  /foreground-child/2.0.0:
+    resolution: {integrity: sha1-cbMoAMnxWqjy+D9Ka9m/812GGlM=}
+    engines: {node: '>=8.0.0'}
+    dependencies:
+      cross-spawn: 7.0.3
+      signal-exit: 3.0.6
     dev: true
 
   /form-data/2.5.1:
@@ -2031,6 +2077,10 @@ packages:
       whatwg-encoding: 2.0.0
     dev: true
 
+  /html-escaper/2.0.2:
+    resolution: {integrity: sha1-39YAJ9o2o238viNiYsAKWCJoFFM=}
+    dev: true
+
   /http-basic/8.1.3:
     resolution: {integrity: sha1-p8q+51Joabm3EBNpcIBbEAQmG78=}
     engines: {node: '>=6.0.0'}
@@ -2270,6 +2320,28 @@ packages:
       lodash.uniqby: 4.7.0
     dev: true
 
+  /istanbul-lib-coverage/3.2.0:
+    resolution: {integrity: sha1-GJ55CdCjn6Wj361bA/cZR3cBkdM=}
+    engines: {node: '>=8'}
+    dev: true
+
+  /istanbul-lib-report/3.0.0:
+    resolution: {integrity: sha1-dRj+UupE3jcvRgp2tezan/tz2KY=}
+    engines: {node: '>=8'}
+    dependencies:
+      istanbul-lib-coverage: 3.2.0
+      make-dir: 3.1.0
+      supports-color: 7.2.0
+    dev: true
+
+  /istanbul-reports/3.1.2:
+    resolution: {integrity: sha1-uA4Ty6sBIOHDZ+uqCZhiNhrtXq0=}
+    engines: {node: '>=8'}
+    dependencies:
+      html-escaper: 2.0.2
+      istanbul-lib-report: 3.0.0
+    dev: true
+
   /java-properties/1.0.2:
     resolution: {integrity: sha1-zNH6c5B0OKW1w4mCJp0Odx/nghE=}
     engines: {node: '>= 0.6.0'}
@@ -2414,6 +2486,13 @@ packages:
       p-locate: 4.1.0
     dev: true
 
+  /locate-path/6.0.0:
+    resolution: {integrity: sha1-VTIeswn+u8WcSAHZMackUqaB0oY=}
+    engines: {node: '>=10'}
+    dependencies:
+      p-locate: 5.0.0
+    dev: true
+
   /lodash.capitalize/4.2.1:
     resolution: {integrity: sha1-+CbJtOKoUR2E46yinbBeGk87cqk=}
     dev: true
@@ -2472,6 +2551,13 @@ packages:
   /lz-string/1.4.4:
     resolution: {integrity: sha1-wNjq82BZ9wV5bh40SBHPTEmNOiY=}
     hasBin: true
+    dev: true
+
+  /make-dir/3.1.0:
+    resolution: {integrity: sha1-QV6WcEazp/HRhSd9hKpYIDcmoT8=}
+    engines: {node: '>=8'}
+    dependencies:
+      semver: 6.3.0
     dev: true
 
   /make-error/1.3.6:
@@ -2837,6 +2923,13 @@ packages:
       p-try: 2.2.0
     dev: true
 
+  /p-limit/3.1.0:
+    resolution: {integrity: sha1-4drMvnjQ0TiMoYxk/qOOPlfjcGs=}
+    engines: {node: '>=10'}
+    dependencies:
+      yocto-queue: 0.1.0
+    dev: true
+
   /p-locate/2.0.0:
     resolution: {integrity: sha1-IKAQOyIqcMj9OcwuWAaA893l7EM=}
     engines: {node: '>=4'}
@@ -2849,6 +2942,13 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       p-limit: 2.3.0
+    dev: true
+
+  /p-locate/5.0.0:
+    resolution: {integrity: sha1-g8gxXGeFAF470CGDlBHJ4RDm2DQ=}
+    engines: {node: '>=10'}
+    dependencies:
+      p-limit: 3.1.0
     dev: true
 
   /p-map/2.1.0:
@@ -3403,6 +3503,11 @@ packages:
     requiresBuild: true
     dev: true
 
+  /source-map/0.7.3:
+    resolution: {integrity: sha1-UwL4FpAxc1ImVECS5kmB91F1A4M=}
+    engines: {node: '>= 8'}
+    dev: true
+
   /spawn-error-forwarder/1.0.0:
     resolution: {integrity: sha1-Gv2Uc46ZmwNG17n8NzvlXgdXcCk=}
     dev: true
@@ -3585,6 +3690,15 @@ packages:
       temp-dir: 2.0.0
       type-fest: 0.16.0
       unique-string: 2.0.0
+    dev: true
+
+  /test-exclude/6.0.0:
+    resolution: {integrity: sha1-BKhphmHYBepvopO2y55jrARO8V4=}
+    engines: {node: '>=8'}
+    dependencies:
+      '@istanbuljs/schema': 0.1.3
+      glob: 7.2.0
+      minimatch: 3.0.4
     dev: true
 
   /text-extensions/1.9.0:
@@ -3790,6 +3904,15 @@ packages:
     resolution: {integrity: sha1-RQ1Nyfpw3nMnYvvS1KKJgUGaDM8=}
     dev: true
 
+  /v8-to-istanbul/8.1.0:
+    resolution: {integrity: sha1-Cut2OJTxoKFnat+Ki3YSo4kCRGw=}
+    engines: {node: '>=10.12.0'}
+    dependencies:
+      '@types/istanbul-lib-coverage': 2.0.3
+      convert-source-map: 1.8.0
+      source-map: 0.7.3
+    dev: true
+
   /validate-npm-package-license/3.0.4:
     resolution: {integrity: sha1-/JH2uce6FchX9MssXe/uw51PQQo=}
     dependencies:
@@ -3821,7 +3944,7 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.0.100_52dae33e17079a58a59d4319adda37c0:
+  /vitest/0.0.100_c23fa83c5cba54867369e85d121cc256:
     resolution: {integrity: sha1-QusdK7UEu/Zwl/xhHGI/WlllUvo=}
     engines: {node: '>=14.14.0'}
     hasBin: true
@@ -3840,6 +3963,7 @@ packages:
     dependencies:
       '@types/chai': 4.3.0
       '@types/chai-subset': 1.3.3
+      c8: 7.10.0
       happy-dom: 2.25.0
       jsdom: 19.0.0
       local-pkg: 0.4.0
@@ -4008,3 +4132,8 @@ packages:
     engines: {node: '>=6'}
     dev: true
     optional: true
+
+  /yocto-queue/0.1.0:
+    resolution: {integrity: sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=}
+    engines: {node: '>=10'}
+    dev: true

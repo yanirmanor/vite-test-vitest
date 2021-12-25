@@ -28,5 +28,5 @@ jobs:
             run_install: true
 
         - run: pnpm run build
-        - run: pnpm run coverage
+        - run: pnpm run test:CI
         - run: pnpm semantic-release
