@@ -20,7 +20,7 @@ specifiers:
   react-test-renderer: ^17.0.2
   semantic-release: ^18.0.1
   vite: ^2.7.2
-  vitest: ^0.0.100
+  vitest: ^0.0.113
 
 dependencies:
   react: 17.0.2
@@ -44,7 +44,7 @@ devDependencies:
   react-test-renderer: 17.0.2_react@17.0.2
   semantic-release: 18.0.1
   vite: 2.7.4
-  vitest: 0.0.100_c23fa83c5cba54867369e85d121cc256
+  vitest: 0.0.113_c23fa83c5cba54867369e85d121cc256
 
 packages:
 
@@ -918,6 +918,10 @@ packages:
     resolution: {integrity: sha1-5QNHYR1+aQlDIIu9r+vLwvuGbUY=}
     dev: true
 
+  /assertion-error/1.1.0:
+    resolution: {integrity: sha1-5gtrDo8wG9l+U3UhW9pAbIURjAs=}
+    dev: true
+
   /asynckit/0.4.0:
     resolution: {integrity: sha1-x57Zf380y48robyXkLzDZkdLS3k=}
     dev: true
@@ -1045,6 +1049,18 @@ packages:
     resolution: {integrity: sha1-G2gcIf+EAzyCZUMJBolCDRhxUdw=}
     dev: true
 
+  /chai/4.3.4:
+    resolution: {integrity: sha1-tV5lWzHh6scJm+TAjCGWT84ubEk=}
+    engines: {node: '>=4'}
+    dependencies:
+      assertion-error: 1.1.0
+      check-error: 1.0.2
+      deep-eql: 3.0.1
+      get-func-name: 2.0.0
+      pathval: 1.1.1
+      type-detect: 4.0.8
+    dev: true
+
   /chalk/2.4.2:
     resolution: {integrity: sha1-zUJUFnelQzPPVBpJEIwUMrRMlCQ=}
     engines: {node: '>=4'}
@@ -1064,6 +1080,10 @@ packages:
 
   /chardet/0.7.0:
     resolution: {integrity: sha1-kAlISfCTfy7twkJdDSip5fDLrZ4=}
+    dev: true
+
+  /check-error/1.0.2:
+    resolution: {integrity: sha1-V00xLt2Iu13YkS6Sht1sCu1KrII=}
     dev: true
 
   /clean-stack/2.2.0:
@@ -1353,6 +1373,13 @@ packages:
 
   /dedent/0.7.0:
     resolution: {integrity: sha1-JJXduvbrh0q7Dhvp3yLS5aVEMmw=}
+    dev: true
+
+  /deep-eql/3.0.1:
+    resolution: {integrity: sha1-38lARACtHI/gI+faHfHBR8S0RN8=}
+    engines: {node: '>=0.12'}
+    dependencies:
+      type-detect: 4.0.8
     dev: true
 
   /deep-extend/0.6.0:
@@ -1873,6 +1900,10 @@ packages:
   /get-caller-file/2.0.5:
     resolution: {integrity: sha1-T5RBKoLbMvNuOwuXQfipf+sDH34=}
     engines: {node: 6.* || 8.* || >= 10.*}
+    dev: true
+
+  /get-func-name/2.0.0:
+    resolution: {integrity: sha1-6td0q+5y4gQJQzoGY2YCPdaIekE=}
     dev: true
 
   /get-intrinsic/1.1.1:
@@ -3053,6 +3084,10 @@ packages:
     engines: {node: '>=8'}
     dev: true
 
+  /pathval/1.1.1:
+    resolution: {integrity: sha1-hTTnenfOesWiUS6iHg/bj89sPY0=}
+    dev: true
+
   /picocolors/1.0.0:
     resolution: {integrity: sha1-y1vcdP8/UYkiNur3nWi8RFZKuBw=}
     dev: true
@@ -3740,13 +3775,13 @@ packages:
       readable-stream: 3.6.0
     dev: true
 
-  /tinypool/0.0.3:
-    resolution: {integrity: sha1-f5tLgyDr1KLZTKzo47QFgehc+eg=}
+  /tinypool/0.0.6:
+    resolution: {integrity: sha1-GcoQMp5/YNyf/5ASjjNX6JWEBAU=}
     engines: {node: '>=14.0.0'}
     dev: true
 
-  /tinyspy/0.1.2:
-    resolution: {integrity: sha1-RJ9IDcYk+69EGrSWMkKfwsY4f34=}
+  /tinyspy/0.2.6:
+    resolution: {integrity: sha1-TFQwr6Nh1KGEMfhdnMvvwhxgfLM=}
     engines: {node: '>=14.0.0'}
     dev: true
 
@@ -3829,6 +3864,11 @@ packages:
     engines: {node: '>= 0.8.0'}
     dependencies:
       prelude-ls: 1.1.2
+    dev: true
+
+  /type-detect/4.0.8:
+    resolution: {integrity: sha1-dkb7XxiHHPu3dJ5pvTmmOI63RQw=}
+    engines: {node: '>=4'}
     dev: true
 
   /type-fest/0.16.0:
@@ -3944,8 +3984,8 @@ packages:
       fsevents: 2.3.2
     dev: true
 
-  /vitest/0.0.100_c23fa83c5cba54867369e85d121cc256:
-    resolution: {integrity: sha1-QusdK7UEu/Zwl/xhHGI/WlllUvo=}
+  /vitest/0.0.113_c23fa83c5cba54867369e85d121cc256:
+    resolution: {integrity: sha1-afgWu91UTotQPKDGMTF7pHxuMKo=}
     engines: {node: '>=14.14.0'}
     hasBin: true
     peerDependencies:
@@ -3964,11 +4004,12 @@ packages:
       '@types/chai': 4.3.0
       '@types/chai-subset': 1.3.3
       c8: 7.10.0
+      chai: 4.3.4
       happy-dom: 2.25.0
       jsdom: 19.0.0
       local-pkg: 0.4.0
-      tinypool: 0.0.3
-      tinyspy: 0.1.2
+      tinypool: 0.0.6
+      tinyspy: 0.2.6
       vite: 2.7.4
     dev: true
 
