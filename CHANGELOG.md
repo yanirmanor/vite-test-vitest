@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/yanirmanor/vite-test-vitest/compare/v1.0.0...v1.0.1) (2021-12-25)
+
+
+### Bug Fixes
+
+* upgrade vitest version to fix coverage ([d582373](https://github.com/yanirmanor/vite-test-vitest/commit/d582373f56462c75185c4cad438a9730c1ec32e7))
+
 # 1.0.0 (2021-12-25)
 
 
