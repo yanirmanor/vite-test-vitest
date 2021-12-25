@@ -8,7 +8,7 @@
     "test": "vitest",
     "coverage": "vitest --coverage",
     "semantic-release": "semantic-release",
-    "cz": "cz"
+    "commit": "cz"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -35,7 +35,7 @@
   },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "cz"
+      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   },
   "config": {
