@@ -8,7 +8,8 @@
     "test": "vitest",
     "test:CI": "vitest --watch=false",
     "coverage": "vitest --coverage",
-    "semantic-release": "semantic-release",
+    "semantic-release": "semantic-release --config .releaserc.json",
+    "semantic-release-dry": "semantic-release --dry-run --no-ci --config .releaserc.json",
     "commit": "cz"
   },
   "dependencies": {
