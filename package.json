@@ -7,7 +7,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "coverage": "vitest --coverage",
-    "semantic-release": "semantic-release"
+    "semantic-release": "semantic-release",
+    "cz": "cz"
   },
   "dependencies": {
     "react": "^17.0.2",
@@ -34,12 +35,13 @@
   },
   "husky": {
     "hooks": {
-      "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
+      "prepare-commit-msg": "cz"
     }
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  }
+  },
+  "release": { "branches": ["main"] }
 }
