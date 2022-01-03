@@ -1,7 +1,7 @@
 import { beforeAll, afterAll, afterEach } from 'vitest'
 import { setupServer } from 'msw/node'
 import { rest } from 'msw'
-import { it, expect } from 'vitest'
+import { it, expect, vi } from 'vitest'
 import {
   render,
   screen,
@@ -49,4 +49,23 @@ it('basic mock server', async () => {
   expect(screen.queryByText('Loading...')).toBeTruthy()
   await waitForElementToBeRemoved(() => screen.queryByText('Loading...'))
   expect(screen.getByText('John')).toBeTruthy()
+})
+
+it('basic function mock', async () => {
+  const mockFnSimple = vi.fn(() => 'Hello World')
+  expect(await mockFnSimple()).toBe('Hello World')
+})
+
+it('override mock value', () => {
+  const mockFnOverrideValue = vi.fn()
+  mockFnOverrideValue.mockReturnValue(23)
+  expect(mockFnOverrideValue()).toBe(23)
+  mockFnOverrideValue.mockReturnValue(41)
+  expect(mockFnOverrideValue()).toBe(41)
+})
+
+it('mock implementation', () => {
+  const mockFnGetSum = vi.fn().mockImplementation(sum => sum * 3.14)
+  const total = mockFnGetSum(100)
+  expect(total).toBe(314)
 })
