@@ -1,6 +1,34 @@
 import { useState } from 'react'
-import logo from './logo.svg'
 import './App.css'
+import { QueryClientProvider, QueryClient } from 'react-query'
+import { Actor } from './Actor'
+import { setupWorker, rest } from 'msw'
+
+if (import.meta.env.VITE_MOCKING === true) {
+  const handlers = [
+    rest.get('https://randomuser.me/api/', (req, res, ctx) => {
+      return res(
+        ctx.delay(1000),
+        ctx.status(202, 'Mocked status'),
+        ctx.json({
+          results: [
+            {
+              name: {
+                first: 'John',
+                last: 'Doe'
+              }
+            }
+          ]
+        })
+      )
+    })
+  ]
+
+  const worker = setupWorker(...handlers)
+  worker.start()
+}
+
+const queryClient = new QueryClient()
 
 export function SimpleText () {
   return <h1>Hello World</h1>
@@ -9,39 +37,11 @@ function App () {
   const [count, setCount] = useState(0)
 
   return (
-    <div className='App'>
-      <header className='App-header'>
-        <img src={logo} className='App-logo' alt='logo' />
-        <p>Hello Vite + React!</p>
-        <p>
-          <button type='button' onClick={() => setCount(count => count + 1)}>
-            count is: {count}
-          </button>
-        </p>
-        <p>
-          Edit <code>App.jsx</code> and save to test HMR updates.
-        </p>
-        <p>
-          <a
-            className='App-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Learn React
-          </a>
-          {' | '}
-          <a
-            className='App-link'
-            href='https://vitejs.dev/guide/features.html'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Vite Docs
-          </a>
-        </p>
-      </header>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className='App'>
+        <Actor />
+      </div>
+    </QueryClientProvider>
   )
 }
 
