@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/yanirmanor/vite-test-vitest/compare/v1.0.1...v1.1.0) (2022-01-03)
+
+
+### Features
+
+* **testing:** adding mocking for develop and testing ([56455d4](https://github.com/yanirmanor/vite-test-vitest/commit/56455d4bce10c58debdbd6e9a8e60c71c76ad2be))
+
 ## [1.0.1](https://github.com/yanirmanor/vite-test-vitest/compare/v1.0.0...v1.0.1) (2021-12-25)
 
 
