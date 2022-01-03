@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/yanirmanor/vite-test-vitest/compare/v1.1.0...v1.2.0) (2022-01-03)
+
+
+### Features
+
+* **testing:** add simple mock examples ([8fc9ad1](https://github.com/yanirmanor/vite-test-vitest/commit/8fc9ad15e8573703cbe1635d02c41e3a5ce85220))
+
 # [1.1.0](https://github.com/yanirmanor/vite-test-vitest/compare/v1.0.1...v1.1.0) (2022-01-03)
 
 
